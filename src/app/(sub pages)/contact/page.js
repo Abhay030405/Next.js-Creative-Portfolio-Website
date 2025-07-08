@@ -23,12 +23,9 @@ export default function Contact() {
             summon the wizard
           </h1>
           <p className="text-center font-light text-sm xs:text-base">
-            Step into the circle of enchantment and weave your words into the
-            fabric of the cosmos. Whether you seek to conjure collaborations,
-            unlock mysteries, or simply share tales of adventure, your messages
-            are treasured scrolls within this realm. Use the form below to send
-            your missives through the ethereal network, and await the whisper of
-            magic in response.
+            Whether you have a question, need assistance, or want to discuss a
+            project, I'm here to help. Fill out the form below, and I'll get back
+            to you as soon as possible. Let's create something magical together!
           </p>
         </div>
         <Form />

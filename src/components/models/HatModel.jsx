@@ -20,9 +20,9 @@ const HatModel = React.memo(function HatModel(props) {
       {...props}
       dispose={null}
       ref={modelRef}
-      scale={[1.8, 1.8, 1.8]}
-      rotation={[0.4, -1, 0]}
-      position={[0, 0, 0]}
+      scale={[1.5, 1.5, 1.5]}
+      rotation={[0.4,-1, 0]}
+      position={[0, 0.5, 0]}
     >
       <mesh
         castShadow
