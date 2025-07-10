@@ -57,7 +57,7 @@ const AboutDetails = () => {
         <ItemLayout className="col-span-full">
           <img
             className="w-full h-auto"
-            src={`https://skillicons.dev/icons?i=python,java,r,tensorflow,git,github,docker,sklearn,pytorch,html,css,javascript,react,nextjs,tailwind,threejs`}
+            src={`https://skillicons.dev/icons?i=python,c,java,mysql,ai,tensorflow,pytorch,git,github,docker,sklearn,vscode,html,css,javascript`}
             alt="Skills"
             loading="lazy"
           />
@@ -76,13 +76,13 @@ const AboutDetails = () => {
         {/* Featured Repo */}
         <ItemLayout className="col-span-full md:col-span-6 !p-0">
           <Link
-            href="https://github.com/Abhay030405/Conway-s-Game-of-Life"
+            href="https://github.com/Abhay030405/FinLLM-X"
             target="_blank"
             className="w-full"
           >
             <img
               className="w-full h-auto"
-              src={`https://github-readme-stats.vercel.app/api/pin/?username=Abhay030405&repo=Conway-s-Game-of-Life&theme=transparent&hide_border=true&title_color=FEFE5B&text_color=FFFFFF&icon_color=FEFE5B&text_bold=false&description_lines_count=2`}
+              src={`https://github-readme-stats.vercel.app/api/pin/?username=Abhay030405&repo=FinLLM-X&theme=transparent&hide_border=true&title_color=FEFE5B&text_color=FFFFFF&icon_color=FEFE5B&text_bold=false&description_lines_count=2`}
               alt="Featured Project"
               loading="lazy"
             />
