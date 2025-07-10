@@ -3,6 +3,13 @@ import { Environment } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import clsx from "clsx";
 import React, { Suspense } from "react";
+import LoadingPulse from "./LoadingPulse";
+
+const ModelLoader = () => (
+  <div className="absolute inset-0 flex items-center justify-center">
+    <LoadingPulse size="xl" />
+  </div>
+);
 
 const RenderModel = ({ children, className }) => {
   return (
@@ -12,7 +19,7 @@ const RenderModel = ({ children, className }) => {
       dpr={[1, 2]}
       // dpr is the device pixel ratio. Here we are setting it to 1 and 2 for retina displays to prevent blurriness in the model rendering on high resolution screens.
     >
-      <Suspense fallback={null}>{children}</Suspense>
+      <Suspense fallback={<ModelLoader />}>{children}</Suspense>
       <Environment preset="dawn" />
     </Canvas>
   );
