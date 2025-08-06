@@ -1,8 +1,15 @@
 "use client";
-import { Environment } from "@react-three/drei";
+import { Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import clsx from "clsx";
 import React, { Suspense } from "react";
+import LoadingPulse from "./LoadingPulse";
+
+const ModelLoader = () => (
+  <div className="absolute inset-0 flex items-center justify-center">
+    <LoadingPulse size="xl" />
+  </div>
+);
 
 const RenderModel = ({ children, className }) => {
   return (
@@ -10,10 +17,15 @@ const RenderModel = ({ children, className }) => {
       className={clsx("w-screen h-screen -z-10 relative", className)}
       shadows={false}
       dpr={[1, 2]}
-      // dpr is the device pixel ratio. Here we are setting it to 1 and 2 for retina displays to prevent blurriness in the model rendering on high resolution screens.
     >
-      <Suspense fallback={null}>{children}</Suspense>
+      {/* Soft ambient light for glow */}
+      <ambientLight intensity={0.7} />
+      {/* Subtle point light for depth */}
+      <pointLight position={[0, 5, 10]} intensity={0.5} color="#FEFE5B" />
+      <Suspense fallback={<ModelLoader />}>{children}</Suspense>
       <Environment preset="dawn" />
+      {/* Allow user to drag/zoom/rotate the model */}
+      <OrbitControls enablePan={false} enableZoom={false} />
     </Canvas>
   );
 };
