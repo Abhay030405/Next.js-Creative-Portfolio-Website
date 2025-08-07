@@ -15,7 +15,11 @@ const socials = [
   {
     href: "https://www.kaggle.com/abhayagarwal030405",
     label: "Kaggle",
-    icon: <BarChart2 className="w-full h-auto" strokeWidth={1.5} />,
+    icon: (
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+        <text x="6" y="24" fontFamily="monospace" fontWeight="bold" fontSize="22" fill="#20BEFF">K</text>
+      </svg>
+    ),
   },
   {
     href: "https://instagram.com/abhay_030405",
