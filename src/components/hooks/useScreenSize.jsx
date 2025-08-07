@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const useScreenSize = () => {
-  const [screenSize, setScreenSize] = useState();
+  const [screenSize, setScreenSize] = useState(1024); // Default to desktop size
 
   useEffect(() => {
     function getScreenSize() {

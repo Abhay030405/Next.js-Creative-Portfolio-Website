@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 60, scale: 0.95 },
@@ -12,14 +13,15 @@ const childVariants = {
   show: (i) => ({ opacity: 1, y: 0, transition: { delay: 0.1 + i * 0.08, type: "spring", stiffness: 100, damping: 18 } }),
 };
 
-const ProjectLayout = ({ name, description, date, demoLink, githubLink, liveLink, onViewDetails }) => {
+const ProjectLayout = ({ id, name, description, date, demoLink, githubLink, liveLink }) => {
+  const router = useRouter();
   return (
     <motion.div
       variants={cardVariants}
       initial="hidden"
       animate="show"
       whileHover="hover"
-      className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-xl transition-all duration-300"
+      className="w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 shadow-xl transition-all duration-300 flex flex-col h-full"
     >
       {/* Project Header */}
       <motion.div
@@ -41,18 +43,18 @@ const ProjectLayout = ({ name, description, date, demoLink, githubLink, liveLink
         variants={childVariants}
         initial="hidden"
         animate="show"
-        className="text-muted mb-6 leading-relaxed"
+        className="text-muted leading-relaxed flex-grow"
       >
         {description}
       </motion.p>
 
-      {/* Project Links */}
+      {/* Project Links - GitHub and View Details in same line */}
       <motion.div
         custom={2}
         variants={childVariants}
         initial="hidden"
         animate="show"
-        className="flex flex-wrap gap-3 mb-6"
+        className="flex items-center justify-between mt-auto pt-4"
       >
         {githubLink && (
           <Link
@@ -67,32 +69,9 @@ const ProjectLayout = ({ name, description, date, demoLink, githubLink, liveLink
             GitHub
           </Link>
         )}
-        {liveLink && (
-          <Link
-            href={liveLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-accent/20 hover:bg-accent/30 text-accent px-4 py-2 rounded-lg transition-all duration-200 hover:scale-105"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-            Live Demo
-          </Link>
-        )}
-      </motion.div>
-
-      {/* View Details Button */}
-      <motion.div
-        custom={3}
-        variants={childVariants}
-        initial="hidden"
-        animate="show"
-        className="flex justify-end"
-      >
         <button
           type="button"
-          onClick={onViewDetails}
+          onClick={() => router.push(`/projects/${id}`)}
           className="flex items-center gap-2 bg-gradient-to-r from-accent/20 to-accent/10 hover:from-accent/30 hover:to-accent/20 text-foreground px-6 py-3 rounded-lg transition-all duration-200 hover:scale-105 border border-accent/20 hover:border-accent/40 focus:outline-none focus:ring-2 focus:ring-accent/40"
         >
           <span>View Details</span>

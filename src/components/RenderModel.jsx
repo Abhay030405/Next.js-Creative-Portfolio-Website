@@ -3,18 +3,17 @@ import { Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import clsx from "clsx";
 import React, { Suspense } from "react";
-import LoadingPulse from "./LoadingPulse";
 
 const ModelLoader = () => (
   <div className="absolute inset-0 flex items-center justify-center">
-    <LoadingPulse size="xl" />
+    <div className="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin"></div>
   </div>
 );
 
 const RenderModel = ({ children, className }) => {
   return (
     <Canvas
-      className={clsx("w-screen h-screen -z-10 relative", className)}
+      className={clsx("w-screen h-screen -z-20 relative", className)}
       shadows={false}
       dpr={[1, 2]}
     >

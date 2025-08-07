@@ -78,7 +78,7 @@ export default function ContactLanding() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 80, damping: 16 }}
         >
-          Let's chat about your project
+          Let&apos;s chat about your project
         </motion.h1>
         <motion.p
           className="text-muted text-lg text-center max-w-2xl"
@@ -86,7 +86,7 @@ export default function ContactLanding() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          Have an idea? Let's bring it to life together.
+          Have an idea? Let&apos;s bring it to life together.
         </motion.p>
       </div>
       <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -98,7 +98,7 @@ export default function ContactLanding() {
           transition={{ delay: 0.3, type: "spring", stiffness: 80, damping: 16 }}
         >
           <h2 className="text-2xl font-bold text-foreground mb-2">Quick Chat</h2>
-          <p className="text-muted mb-6">Got a quick question? Drop me a message and I'll get back to you within 24 hours.</p>
+          <p className="text-muted mb-6">Got a quick question? Drop me a message and I&apos;ll get back to you within 24 hours.</p>
           <a
             href="mailto:officialabhay030405@gmail.com"
             className="mt-auto"
@@ -119,7 +119,7 @@ export default function ContactLanding() {
           transition={{ delay: 0.4, type: "spring", stiffness: 80, damping: 16 }}
         >
           <h2 className="text-2xl font-bold text-foreground mb-2">Schedule Call</h2>
-          <p className="text-muted mb-6">Let's have a detailed discussion about your project and requirements.</p>
+          <p className="text-muted mb-6">Let&apos;s have a detailed discussion about your project and requirements.</p>
           <button
             className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-accent/80 text-background font-semibold text-lg shadow-lg hover:bg-accent transition-all duration-150 mt-auto"
             onClick={() => setShowCallForm((v) => !v)}

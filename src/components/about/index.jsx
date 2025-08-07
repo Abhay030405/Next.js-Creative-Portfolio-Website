@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import ItemLayout from "./ItemLayout";
 import Link from "next/link";
+import CodingStats from "./CodingStats";
 
 const achievements = [
   {
@@ -91,6 +93,23 @@ const certifications = [
 const AboutDetails = () => {
   return (
     <section className="py-20 w-full">
+      {/* Quote Section */}
+      <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto"
+        >
+          <p className="text-accent text-xl md:text-2xl lg:text-3xl font-light italic mb-4">
+            "Code is poetry in motion, where logic meets creativity"
+          </p>
+          <p className="text-muted text-sm md:text-base">
+            — Abhay Agarwal
+          </p>
+        </motion.div>
+      </div>
+
       <div className="grid grid-cols-12 gap-4 xs:gap-6 md:gap-8 w-full">
         {/* Intro Text */}
         <ItemLayout className="col-span-full lg:col-span-8 row-span-2 flex-col items-start">
@@ -168,6 +187,9 @@ const AboutDetails = () => {
             />
           </Link>
         </ItemLayout>
+
+        {/* Coding Platform Stats */}
+        <CodingStats />
 
         {/* Achievements as Modern Cards */}
         <ItemLayout className="col-span-full">
@@ -289,8 +311,8 @@ const AboutDetails = () => {
         {/* Fun Fact */}
         <ItemLayout className="col-span-full text-center">
           <p className="font-light text-sm sm:text-base italic">
-            "Beyond building projects, I love diving into financial markets, exploring AI breakthroughs, 
-            and solving real-world problems through technology and collaboration."
+            &ldquo;Beyond building projects, I love diving into financial markets, exploring AI breakthroughs, 
+            and solving real-world problems through technology and collaboration.&rdquo;
           </p>
         </ItemLayout>
       </div>
